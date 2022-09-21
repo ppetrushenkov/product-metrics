@@ -1,9 +1,9 @@
-select
-    toMonday(time) as cdate,
-    count(distinct user_id) as WAU
-from
+SELECT
+    toMonday(time) AS cdate,
+    COUNT(DISTINCT user_id) AS WAU
+FROM
     simulator_20220820.feed_actions
 WHERE 
     cdate != toMonday(today())
-group by
+GROUP BY
     cdate
